@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Color</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: Color (org.example)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Color</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (5/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (5/10)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Color$HibernateInstantiator$ccC6iCQq</td>
+  </tr>
+  <tr>
+    <td class="name">Color$HibernateProxy$mVKVaJUL</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (5/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (5/10)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;import jakarta.persistence.*;
+&nbsp;
+&nbsp;@Entity
+&nbsp;@Table(name=&quot;color&quot;)
+<b class="fc">&nbsp;public class Color {</b>
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    private Long color_id;
+&nbsp;    @Column(nullable = false)
+&nbsp;    private int r;
+&nbsp;    @Column(nullable = false)
+&nbsp;    private int g;
+&nbsp;    @Column(nullable = false)
+&nbsp;    private int b;
+&nbsp;    @Column(nullable = false)
+&nbsp;    private double alpha;
+&nbsp;
+&nbsp;    public void setR(int r) {
+<b class="fc">&nbsp;        this.r = r;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setG(int g) {
+<b class="fc">&nbsp;        this.g = g;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setB(int b) {
+<b class="fc">&nbsp;        this.b = b;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setAlpha(double alpha) {
+<b class="fc">&nbsp;        this.alpha = alpha;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getR() {
+<b class="nc">&nbsp;        return r;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getG() {
+<b class="nc">&nbsp;        return g;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public int getB() {
+<b class="nc">&nbsp;        return b;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public double getAlpha() {
+<b class="nc">&nbsp;        return alpha;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String toAnsi() {
+<b class="nc">&nbsp;        return String.format(&quot;\u001B[38;2;%d;%d;%dm&quot;, r, g, b);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-06 18:51</div>
+</div>
+</body>
+</html>

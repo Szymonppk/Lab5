@@ -1,0 +1,165 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ShapeRender</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: ShapeRender (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ShapeRender</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/26)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;import java.util.List;
+&nbsp;
+<b class="nc">&nbsp;public class ShapeRender {</b>
+&nbsp;    public static void renderShapes(List&lt;Shape&gt; shapes) {
+<b class="nc">&nbsp;        for (Shape shape : shapes) {</b>
+<b class="nc">&nbsp;            System.out.println(&quot;Figura: &quot; + shape.getClass().getSimpleName());</b>
+<b class="nc">&nbsp;            System.out.println(&quot;Pole: &quot; + shape.getArea());</b>
+<b class="nc">&nbsp;            System.out.println(&quot;Obwód: &quot; + shape.getPerimeter());</b>
+<b class="nc">&nbsp;            System.out.println(&quot;Kolor: &quot; + shape.getColorDescription());</b>
+<b class="nc">&nbsp;            drawShape(shape);</b>
+<b class="nc">&nbsp;            System.out.println(&quot;-----------------------------&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private static void drawShape(Shape shape) {
+<b class="nc">&nbsp;        if (shape instanceof Rectangle rectangle) {</b>
+<b class="nc">&nbsp;            drawRectangle(rectangle);</b>
+<b class="nc">&nbsp;        } else if (shape instanceof Triangle triangle) {</b>
+<b class="nc">&nbsp;            drawTriangle(triangle);</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;            System.out.println(&quot;Nieznany typ figury.&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private static void drawRectangle(Rectangle rectangle) {
+<b class="nc">&nbsp;        int width = (int) rectangle.getA();</b>
+<b class="nc">&nbsp;        int height = (int) rectangle.getB();</b>
+<b class="nc">&nbsp;        String color = rectangle.getColor().toAnsi();</b>
+<b class="nc">&nbsp;        for (int i = 0; i &lt; height; i++) {</b>
+<b class="nc">&nbsp;            for (int j = 0; j &lt; width; j++) {</b>
+<b class="nc">&nbsp;                System.out.print(color+ &quot;* &quot; + &quot;\u001B[0m&quot;);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            System.out.println();</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    private static void drawTriangle(Triangle triangle) {
+<b class="nc">&nbsp;        int height = (int) triangle.getH();</b>
+<b class="nc">&nbsp;        String color = triangle.getColor().toAnsi();</b>
+<b class="nc">&nbsp;        for (int i = 1; i &lt;= height; i++) {</b>
+<b class="nc">&nbsp;            for (int j = 0; j &lt; i; j++) {</b>
+<b class="nc">&nbsp;                System.out.print(color + &quot;* &quot; + &quot;\u001B[0m&quot;);</b>
+&nbsp;            }
+<b class="nc">&nbsp;            System.out.println();</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-06 18:51</div>
+</div>
+</body>
+</html>
