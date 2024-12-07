@@ -1,6 +1,7 @@
 package org.example;
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "rectangle")
 public class Rectangle extends Shape {
@@ -11,39 +12,31 @@ public class Rectangle extends Shape {
     @Column(nullable = false)
     private double b;
 
-    @ManyToOne
-    @JoinColumn(name = "color_id")
-    private Color color;
+    public Rectangle() {
 
-    public void setA(double a) {
+    }
+
+    public Rectangle(double a, double b, Color color) {
+        super(color);
         this.a = a;
-    }
-
-    public void setB(double b) {
         this.b = b;
-    }
 
-    public void setColor(Color color) {
-        this.color = color;
     }
 
     public double getA() {
         return a;
     }
 
+    public void setA(double a) {
+        this.a = a;
+    }
+
     public double getB() {
         return b;
     }
 
-    public Color getColor() {
-        return color;
-    }
-
-
-
-    @Override
-    public String getColorDescription() {
-        return "R: " + this.color.getR() + " G: " + this.color.getG() + " B: " + this.color.getB() + " Alpha: " + this.color.getAlpha();
+    public void setB(double b) {
+        this.b = b;
     }
 
     @Override
@@ -56,4 +49,3 @@ public class Rectangle extends Shape {
         return 2 * a + 2 * b;
     }
 }
-

@@ -1,10 +1,11 @@
 package org.example;
-
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "triangle")
 public class Triangle extends Shape {
+
     @Column(nullable = false)
     private double a;
 
@@ -17,54 +18,56 @@ public class Triangle extends Shape {
     @Column(nullable = false)
     private double h;
 
-    @ManyToOne
-    @JoinColumn(name = "color_id")
-    private Color color;
 
-    public void setA(double a) {
+
+    public Triangle() {
+
+    }
+
+
+    public Triangle(double a, double b, double c, double h, Color color) {
+        super(color);
         this.a = a;
-    }
-
-    public void setB(double b) {
         this.b = b;
-    }
-
-    public void setC(double c) {
         this.c = c;
-    }
-
-    public void setH(double h) {
         this.h = h;
+
     }
 
-    public void setColor(Color color) {
-        this.color = color;
-    }
 
     public double getA() {
         return a;
+    }
+
+    public void setA(double a) {
+        this.a = a;
     }
 
     public double getB() {
         return b;
     }
 
+    public void setB(double b) {
+        this.b = b;
+    }
+
     public double getC() {
         return c;
+    }
+
+    public void setC(double c) {
+        this.c = c;
     }
 
     public double getH() {
         return h;
     }
 
-    public Color getColor() {
-        return color;
+    public void setH(double h) {
+        this.h = h;
     }
 
-    @Override
-    public String getColorDescription() {
-        return "R: " + this.color.getR() + " G: " + this.color.getG() + " B: " + this.color.getB() + " Alpha: " + this.color.getAlpha();
-    }
+
 
     @Override
     public double getArea() {
